@@ -13,14 +13,13 @@ module.exports = {
   },
   devServer: {
     port: 9100,
-    static: './dist',
     historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.ejs',
       templateParameters: {},
-      favicon: '',
+      favicon: false,
     }),
     new CleanWebpackPlugin(),
   ],
