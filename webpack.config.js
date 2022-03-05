@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { resolve } = require('path');
+const { resolve, join } = require('path');
 
 module.exports = {
   mode: 'development',
@@ -12,7 +12,11 @@ module.exports = {
     publicPath: '/',
   },
   devServer: {
+    static: {
+      directory: join(__dirname, 'dist'),
+    },
     port: 9100,
+    hot: 'only',
     historyApiFallback: true,
   },
   plugins: [
